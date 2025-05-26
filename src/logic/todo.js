@@ -1,7 +1,6 @@
 export class Todo {
-    constructor(title, description, dueDate, priority, id) {
-        Object.assign(this, { title, description, dueDate, priority, id });
-        this.complete = false;
+    constructor(title, description, dueDate, priority, id, complete = false) {
+        Object.assign(this, { title, description, dueDate, priority, id, complete });
     }
     
     toggle() {

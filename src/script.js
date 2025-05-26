@@ -1,6 +1,9 @@
+import './style.css';
+
 import { Project } from "./logic/project.js";
 import {
     projectCheck,
+    todoCheck,
     getProject,
     deleteProject,
     deleteTodo,
@@ -23,8 +26,6 @@ import { displayProject,
     newTodoForm,
     buildFromLocalStorageDOM 
 } from "./ui/dom.js";
-
-import './style.css';
 
 const newProjButton = document.querySelector("#new-project");
 
@@ -149,6 +150,12 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
     if(e.target.className === "project-check") {
         projectCheck(e.target.parentElement.id);
+    }
+    if(e.target.className === "todo-check") {
+        const proj = e.target.parentNode.parentNode.parentNode.firstChild;
+        console.log("is this a project? ", proj);
+        setCurrentProject(proj.id);
+        todoCheck(e.target.parentNode.id);
     }
 });
 

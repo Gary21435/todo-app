@@ -28,4 +28,9 @@ export class Project {
     giveTodos() {
         return [...this.todos];
     }
+
+    toggleTodo(id) {
+        const todo = this.todos.find(obj => obj.id === id);
+        todo.toggle();
+    }
 }

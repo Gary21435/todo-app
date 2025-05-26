@@ -11,7 +11,8 @@ function setProjects(projectsArr) {
             todo.description,
             todo.dueDate,
             todo.priority,
-            todo.id
+            todo.id,
+            todo.complete
         ));
         return new Project(project.name, project.id, todos, project.complete);
     });
@@ -42,6 +43,11 @@ function projectCheck(id) {
     const proj = projects.find(obj => obj.id === id);
     proj.toggle();
     console.log("project checked: ", proj);
+}
+
+function todoCheck(id) {
+    console.log(current_project);
+    current_project.toggleTodo(id);
 }
 
 function addTodo(todo_data) { 
@@ -102,6 +108,7 @@ function editTodo(id, { input, description, dueDate, priority }) {
 export {
     setProjects,
     projectCheck,
+    todoCheck,
     getProject,
     deleteProject,
     deleteTodo,

@@ -125,6 +125,10 @@ export function buildFromLocalStorageDOM(data) {
         let checkbox = document.createElement("input");
         checkbox.type = 'checkbox';
         checkbox.className = 'project-check';
+        checkbox.checked = project.complete;
+        console.log("proiject complety?????", project.complete);
+        if(project.complete) 
+            form.classList.add("line-through");
 
         const icons = iconContainer();
         container.append(checkbox, form, icons);
@@ -141,6 +145,9 @@ export function buildFromLocalStorageDOM(data) {
             let checkbox = document.createElement("input");
             checkbox.type = 'checkbox';
             checkbox.className = 'todo-check';
+            checkbox.checked = todo.complete;
+            
+
             let newTodo = document.createElement("div");
             newTodo.className = "todo";
             newTodo.id = todo.id;
@@ -152,7 +159,9 @@ export function buildFromLocalStorageDOM(data) {
             const dueDate = todo.dueDate;
             const priority = todo.priority;
             // saveTodo(todoForm, { todo. });
-            saveTodo(todoForm, { input, description, dueDate, priority })
+            todoForm = saveTodo(todoForm, { input, description, dueDate, priority });
+            if(todo.complete)
+                todoForm.classList.add("line-through");
         });
     });
 }
@@ -294,4 +303,5 @@ export function saveTodo(form, { input, description, dueDate, priority }) {
     newForm.append(inputP, descriptionP, dueP, priorityP);
 
     project.insertBefore(newForm, icons);
+    return newForm;
 }
