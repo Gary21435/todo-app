@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    --sidebar-width: 200px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240, 161, 161);
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: rgb(166, 216, 234);
+    box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.281);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(206, 86, 86);
+    border: 2px solid rgb(206, 86, 86);
+    border-style: double;
+    border-radius: 500px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.276);
+
+    width: 92px;
+    height: 90px;
+    align-content: center;
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: rgb(243, 182, 182);
+    padding-left: 2px;
+    padding-right: 2px;
+    cursor: pointer;
+}
+
+button:active {
+    border: 2px solid rgb(235, 132, 132);
+}
+
+#new-project {
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+
+    font-size: 20px;
+    font-weight: 900;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.366);
+    color: rgb(206, 86, 86);
+    cursor: pointer;
+}
+
+#new-project:active {
+    box-shadow: 0px 0px 0px 4px rgb(166, 216, 234);
+}
+
+.projects-container {
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100%-100px);
+    padding-top: 100px;
+    background-color: rgb(240, 161, 161);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.project-stuff {
+    margin: 0px;
+    font-size: 24px;
+    width: calc(80%);
+    padding-left: 20px;
+    background-color: rgb(170, 222, 204);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    margin-left: 5%;
+    box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.133);
+
+    display: flex;
+    gap: 10px;
+}
+
+.edit, .del, .add {
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+}
+
+/* .project:hover is .project in its hover state */
+.project-stuff:hover .edit,
+.project-stuff:hover .del,
+.project-stuff:hover .add {
+    opacity: 1;
+}
+
+form>p {
+    width: 310px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    accent-color: rgb(239, 146, 146);
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: rgb(170, 222, 204);
+}
+
+input:focus {
+    outline: none;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+}
+
+.todo-container {
+    margin-left: 125px;
+    width: min-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.todo-container * {
+    border-radius: 5px;
+    background-color: rgb(236, 239, 153);
+}
+
+.todo-form {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.todo-form > input {
+    font-size: inherit;
+}
+
+.todo-form>p {
+    width: max-content;
+}
+
+.todo-submit {
+    background-color: rgb(243, 182, 182);
+    width: max-content;
+}
+
+.todo {
+    display: flex;
+    gap: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.133);
+}
+
+.todo:hover .edit,
+.todo:hover .del,
+.todo:hover .add {
+    opacity: 1;
+}
+/* 
+option:active {
+    background-color: inherit;
+} */
+
+/* .slide-up {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 1;
+} */
+
+.hide {
+    height: 0;
+    opacity: 0;
+}

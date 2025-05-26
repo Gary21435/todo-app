@@ -1,0 +1,17 @@
+todos:
+
+x implement icons showing only when you hover over that project
+x implement delete icon
+x fix editing project name
+x save project complete state in logic
+x fix project edit done going in order instead of whichever's done you click on
+x implement adding and deleting todos in DOM
+    x new todos will show up under the project with an indentation and yellow background
+x change description from a text area to an input field
+x implement editing todos in DOM
+    x done button stays after submission
+x setCurrentProject either must be run in every instance it's needed or change system
+x implement adding, editing, and deleting todos in logic
+X implement expanding to show todos and retracting; but animation not working
+- implement not allowing project name entry if it already exists
+- implement localStorage
